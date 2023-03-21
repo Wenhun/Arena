@@ -13,23 +13,23 @@ namespace Arena.UI
 
         void Start()
         {
-            _waveGenerator.TimerUpdate += Timer;
+            _waveGenerator.TimerUpdate += SetTimer;
         }
 
         void Update()
         {
             _timer -= Time.deltaTime;
-            _text.text = (Mathf.Round(_timer * 10f) / 10f).ToString();
+            _text.text = _timer.ToString("0.0");
         }
 
-        void Timer(float time)
+        void SetTimer(float time)
         {
             _timer = time;
         }
 
         private void OnDestroy()
         {
-            _waveGenerator.TimerUpdate -= Timer;
+            _waveGenerator.TimerUpdate -= SetTimer;
         }
     }
 }

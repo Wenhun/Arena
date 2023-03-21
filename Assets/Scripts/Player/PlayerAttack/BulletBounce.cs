@@ -17,10 +17,7 @@ namespace Arena.PlayerAttack
 
         public Vector3 TakeNewDirection(EnemyStats crossfireEnemy, Vector3 currentDirection, bool isBounce)
         {
-            if (isBounce)
-            {
-                return Vector3.zero;
-            }
+            if (isBounce) return Vector3.zero;
 
             if (IsBounceActivated(_playerStats.GetHealthPercentage))
             {
@@ -34,14 +31,9 @@ namespace Arena.PlayerAttack
 
         private bool IsBounceActivated(float healthPercentage)
         {
-            if (healthPercentage < 0.2f)
-            {
-                return true;
-            }
+            if (healthPercentage < 0.2f) return true;               
 
-            float random = Random.value;
-
-            return random < _baseChanceBounce;
+            return Random.value < _baseChanceBounce;
         }
 
         private Vector3 FindClosesTarget(EnemyStats crossfireEnemy, Vector3 currentDirection)

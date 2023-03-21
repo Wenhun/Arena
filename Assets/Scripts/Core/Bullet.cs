@@ -4,6 +4,7 @@ using UnityEngine.Pool;
 
 namespace Arena.Core
 {
+    [RequireComponent(typeof(Rigidbody))]
     public abstract class Bullet : MonoBehaviour, IPoolSetup
     {
         [SerializeField] protected float speed = 1f;

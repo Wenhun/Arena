@@ -4,6 +4,7 @@ using Arena.Core;
 
 namespace Arena.PlayerAttack
 {
+    [RequireComponent(typeof(BulletBounce))]
     public class PlayerBullet : Bullet
     {
         private BulletBounce _bulletBounce;
